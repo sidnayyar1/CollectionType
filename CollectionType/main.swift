@@ -60,11 +60,12 @@ if var c = country{
 c.append("india")
 c.append("Canada")
 c.append("USA")
-print("No. of Countries : \(c.count)")
+print("No. of Countries : \(c)")
+    print("name of countries")
 
-}
+
 print("No. of Countries : \(country.count)")
-
+}
 //
 //func sortArray(arr:[Int])->[Int]{
 //    gaurd arr.count > 1 else { return arr}
@@ -143,3 +144,127 @@ func printReverseArray(arr: [String], index: Int)
 }
 
 printReverseArray(arr: country,index: country.count - 1)
+
+print("** dictionary **")
+var countryDictionary = ["IND": "India",
+                         "CAD": "Canada",
+                         "US" :  "united States"]
+
+print(countryDictionary)
+
+print(countryDictionary["US"]!)
+
+print(countryDictionary["PAK"] ?? "Key not exist")
+
+if let c = countryDictionary["PAK"]
+{
+    print(c)
+}
+
+for c in countryDictionary
+{
+    //print(c) with key values
+    print(c.key, c.value)
+    
+}
+
+countryDictionary["PAK"] = "Pakistan"
+
+countryDictionary["PAK"] = "Pakistan"
+
+
+for (k, v) in countryDictionary
+{
+    print("printing using key and values")
+    //print(c) with key values
+        print(k,v)
+}
+
+
+print("*****printing new array type*****")
+
+var newC = Dictionary<String,Int>()
+
+var newArray : Array<Int>
+
+print("*********USing Set******")
+
+
+var mySet = Set<String>()
+
+mySet.insert("India")
+mySet.insert("canada")
+mySet.insert("pakistan")
+mySet.insert("India")
+mySet.insert("India")
+print(mySet)
+
+print("adding new values")
+
+mySet.insert("Russia")
+print(mySet)
+
+
+print("now using mySet 2")
+
+var mySet2 = Set<String>()
+
+mySet2.insert("India")
+mySet2.insert("vancouver")
+mySet2.insert("nepal")
+print(mySet2)
+
+
+print("Now using union and intersection")
+
+let  interSet = mySet.intersection(mySet2)
+
+print(interSet)
+
+let unionSet = mySet.union(mySet2)
+
+print("now using disjoint")
+
+let isDisjoinSet = mySet.isDisjoint(with: mySet2)
+print(isDisjoinSet)
+
+print("now with subtracting")
+
+let minusSet = mySet.subtracting(mySet2)
+print(minusSet)
+
+print("Symmatric difference")
+let symDiffSet = mySet2.symmetricDifference(mySet2)
+print(symDiffSet)
+
+//let ss = [1: 100, 2 : 200,3 : 300,4 : 400]
+//print(ss)
+
+var ss = Dictionary<String,Any>()
+
+ss["int"] = 100
+ss["String"] = "Hello world"
+ss["dict"] = ["K": 100,"v" :10]
+ss["Tuple"] = (100,200)
+
+print(ss)
+
+for item in ss{
+    if item.value is Int{
+        print("I am Integer: \(item)")
+    }
+    if item.value is String{
+        print("I am String \(item)")
+    }
+    if item.value is Dictionary<String,Any>{
+        print("I am dictionary \(item)")
+    }
+    if item.value is (Int,Int){
+        print("I am Tuple :\(item)")
+    }
+
+        
+}
+        
+
+
